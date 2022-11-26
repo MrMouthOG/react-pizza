@@ -16,10 +16,12 @@ import {
   setCategoryId,
   setCurrentPage,
   setFilters,
-  selectFilter,
-} from '../redux/slices/filterSlice';
-import { fetchPizzas, selectPizzasData, SearchPizzaParams } from '../redux/slices/pizzasSlice';
+} from '../redux/filter/slice';
+import { fetchPizzas } from '../redux/pizzas/asyncActions';
 import { useAppDispatch } from '../redux/store';
+import { selectPizzasData } from '../redux/pizzas/selectors';
+import { selectFilter } from '../redux/filter/selectors';
+import { SearchPizzaParams } from '../redux/pizzas/types';
 
 const Home: React.FC = () => {
   const dispatch = useAppDispatch();
